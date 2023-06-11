@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       backgroundColor: {
         "darkBg": "#1D2C33"
-      }
+      },
     },
   },
   plugins: [],
