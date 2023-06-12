@@ -1,4 +1,5 @@
 import { Header } from "./components/Header";
+import { AboutMe } from "./components/Sections/AboutMe";
 import { Introduction } from "./components/Sections/Introduction";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
 
       <main className="text-sm text-gray-900 sm:text-lg">
         <Introduction />
+        <AboutMe/>
       </main>
     </div>
   );

@@ -17,24 +17,24 @@ export function Introduction() {
               target="_blank"
               title="Ir para github"
             >
-              <Github className="text-indigo-600 h-6 w-6" />
+              <Github className="text-indigo-600 h-6 w-6 dark:text-teal-400"/>
             </a>
             <a
               href="https://www.linkedin.com/in/luan-henrique-407822207/"
               target="_blank"
               title="Ir para linkedin"
             >
-              <Linkedin className="text-indigo-600 h-6 w-6" />
+              <Linkedin className="text-indigo-600 h-6 w-6 dark:text-teal-400" />
             </a>
-            <span className="h-28 w-[2px] bg-indigo-300"></span>
+            <span className="h-28 w-[2px] bg-indigo-300 dark:bg-teal-300"></span>
           </div>
 
           {/* main text */}
-          <div className="text-gray-800 space-y-6 text-sm sm:text-md md:text-lg">
+          <div className="text-gray-800 space-y-6 text-sm sm:text-md md:text-lg dark:text-white">
             <div className="flex flex-col-reverse items-start gap-x-6 gap-y-4 md:flex-row md:justify-between md:items-end">
               <h1 className="text-xl font-black whitespace-nowrap tracking-wide sm:text-3xl md:text-4xl lg:text-5xl ">
-                Olá, eu sou{" "}
-                <span className="text-indigo-600">
+                Olá, sou{" "}
+                <span className="text-indigo-600 dark:text-teal-400">
                   Luan <br /> web developer
                 </span>
               </h1>
@@ -44,7 +44,7 @@ export function Introduction() {
                 height={200}
                 width={200}
                 alt="Foto de perfil do Luan"
-                className="w-40 h-40 rounded-sm border-t-4 border-r-4 border-t-indigo-600 border-r-indigo-600 pr-2 pt-2 sm:mr-10 sm:w-48 sm:h-48"
+                className="w-40 h-40 rounded-sm border-t-4 border-r-4 border-t-indigo-600 border-r-indigo-600 pr-2 pt-2 sm:mr-10 sm:w-48 sm:h-48 dark:border-t-teal-400 dark:border-r-teal-400"
               />
             </div>
 
@@ -55,7 +55,7 @@ export function Introduction() {
               <a
                 href="https://www.mesquita.rj.gov.br/"
                 target={"_blank"}
-                className="ml-2 text-indigo-400 cursor-pointer"
+                className="ml-2 text-indigo-400 cursor-pointer dark:text-teal-400"
               >
                 Prefeitura de Mesquita
               </a>
@@ -65,8 +65,14 @@ export function Introduction() {
               href="https://api.whatsapp.com/send?phone=5521987620686"
               target={"_blank"}
               className="inline-block bg-indigo-500 px-6 py-2 cursor-pointer rounded-lg text-white font-medium transition-all border-2 border-indigo-500
-                  hover:bg-white
-                  hover:text-indigo-400"
+                hover:bg-white
+                hover:text-indigo-400
+
+                dark:hover:text-teal-400
+                dark:hover:bg-darkBg
+                dark:bg-teal-400
+                dark:border-teal-400
+                dark:text-gray-800"
             >
               Fale comigo
             </a>

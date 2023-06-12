@@ -4,7 +4,7 @@ interface SectionProps {
 
 export function Section({ children }: SectionProps) {
   return (
-    <section className="min-h-screen max-w-5xl m-auto p-6 sm:p-20">
+    <section className="max-w-5xl m-auto p-6 sm:p-20">
       {children}
     </section>
   );
