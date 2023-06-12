@@ -4,11 +4,11 @@ import { useState } from "react";
 
 export function Header() {
   const menuItems = [
-    { title: "<SobreMim>", href: "#about" },
-    { title: "<Habilidades>", href: "#skills" },
-    { title: "<MeusProjetos>", href: "#projects" },
-    { title: "<Experiência>", href: "#works" },
-    { title: "<Contato>", href: "#contact" },
+    { title: "<SobreMim>", href: "#aboutMe" },
+    { title: "<Habilidades>", href: "#mySkills" },
+    { title: "<MeusProjetos>", href: "#myProjects" },
+    { title: "<Experiência>", href: "#myWorks" },
+    { title: "<Contato>", href: "#myContact" },
   ];
 
   const [menuIsOpen, setMenuIsOpen] = useState(false);

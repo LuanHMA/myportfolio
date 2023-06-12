@@ -7,7 +7,7 @@ export function Introduction() {
   return (
     <Section>
       {/* Container */}
-      <div className="grid grid-cols-1 place-items-center">
+      <div className="grid grid-cols-1 place-items-center" data-aos="fade-up">
         {/* First content */}
         <div className="flex items-start gap-6 sm:gap-10">
           {/* Social medias */}

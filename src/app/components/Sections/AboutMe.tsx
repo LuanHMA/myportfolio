@@ -2,10 +2,10 @@ import { Section } from "../Section";
 
 export function AboutMe(){
     return(
-        <Section>
-            <div className="flex flex-col gap-y-6">
+        <Section id="aboutMe">
+            <div className="flex flex-col gap-y-6" data-aos="fade-up">
                 <h1 className="text-xl font-extrabold tracking-wider sm:text-2xl lg:text-3xl dark:text-white">
-                    <span className="text-indigo-600 font-medium mr-2 dark:text-teal-400">01.</span>
+                    <span className="text-indigo-400 font-medium mr-2 dark:text-teal-400">01.</span>
                     {"<"}Sobre mim{">"}
                 </h1>
 
@@ -16,7 +16,7 @@ export function AboutMe(){
                     um design responsivo e concordante.
                 </p>
 
-                <span className="text-xl font-extrabold tracking-wider text-gray-400 text-right sm:text-2xl lg:text-3xl">
+                <span className="text-lg font-extrabold tracking-wider text-gray-400 text-right sm:text-xl lg:text-2xl">
                     {"</"}sobre mim{">"}
                 </span>
             </div>
