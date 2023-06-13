@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useTheme } from 'next-themes';
-import { AlignRight, Moon, Sun } from "lucide-react";
+import { AlignRight } from "lucide-react";
 
 export function Header() {
   const menuItems = [
@@ -14,10 +13,6 @@ export function Header() {
 
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
-  const { setTheme,systemTheme,theme } = useTheme();
-
-  const currentTheme = theme === "system" ? systemTheme : theme;
-      
 
   const toggleMenu = () => {
     setMenuIsOpen(!menuIsOpen);
@@ -73,16 +68,6 @@ export function Header() {
               );
             })}
           </ul>
-          
-          <button 
-            className="bg-indigo-200 ml-3 lg:ml-0 p-2 rounded-full dark:bg-teal-800 " 
-            onClick={
-              ()=> currentTheme === "dark" ? setTheme("light") : setTheme("dark")
-            }
-          >
-            {currentTheme === "dark" ? <Sun/> : <Moon />}
-          </button>
-
         </nav>
       </header>
       <div
