@@ -28,9 +28,13 @@ export function Header() {
         onMouseLeave={closeMenu}
       >
         <h1 className="font-black -tracking-widest text-3xl text-gray-700 sm:text-4xl dark:text-white">
-          <span className="text-indigo-600 text-2xl dark:text-teal-600">{"<"}</span>
+          <span className="text-indigo-600 text-2xl dark:text-teal-600">
+            {"<"}
+          </span>
           Luan
-          <span className="text-indigo-500 text-2xl dark:text-teal-500">{"/>"}</span>
+          <span className="text-indigo-500 text-2xl dark:text-teal-500">
+            {"/>"}
+          </span>
         </h1>
 
         <nav>
@@ -64,7 +68,6 @@ export function Header() {
             })}
           </ul>
         </nav>
-
       </header>
       <div
         className={`fixed top-0 h-screen w-screen z-40 transition-all duration-700 ${
