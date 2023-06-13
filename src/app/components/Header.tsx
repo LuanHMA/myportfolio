@@ -22,7 +22,7 @@ export function Header() {
 
     return(
       <button 
-        className="bg-indigo-200 p-2 rounded-full dark:bg-teal-800 " 
+        className="bg-indigo-200 ml-3 lg:ml-0 p-2 rounded-full dark:bg-teal-800 " 
         onClick={
           ()=> currentTheme === "dark" ? setTheme("light") : setTheme("dark")
         }
@@ -61,7 +61,7 @@ export function Header() {
             <AlignRight className="h-8 w-8" />
           </button>
           <ul
-            className={`fixed bg-slate-50 top-12 h-screen flex flex-col gap-y-4 px-10 shadow-lg z-50 transition-all duration-300 ${
+            className={`fixed bg-slate-50 top-14 h-screen flex flex-col gap-y-4 px-10 shadow-lg z-50 transition-all duration-300 ${
               menuIsOpen ? "right-0" : "right-[-100vw]"
             }
               lg:flex-row lg:items-center lg:gap-x-4 lg:h-auto lg:relative lg:shadow-none lg:w-auto lg:top-auto lg:right-auto dark:bg-darkBg
