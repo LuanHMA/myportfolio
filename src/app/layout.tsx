@@ -1,4 +1,7 @@
+"use client"
+
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 import { JetBrains_Mono } from "next/font/google";
 
 const jetBrains = JetBrains_Mono({ subsets: ["latin"] });
@@ -16,7 +19,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={jetBrains.className}>{children}</body>
+      <body className={jetBrains.className}>
+        <ThemeProvider attribute="class">
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

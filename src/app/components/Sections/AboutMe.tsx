@@ -3,7 +3,7 @@ import { Section } from "../Section";
 export function AboutMe(){
     return(
         <Section id="aboutMe">
-            <div className="flex flex-col gap-y-6" data-aos="fade-up">
+            <div className="flex flex-col gap-y-6">
                 <h1 className="text-xl font-extrabold tracking-wider sm:text-2xl lg:text-3xl dark:text-white">
                     <span className="text-indigo-400 font-medium mr-2 dark:text-teal-400">01.</span>
                     {"<"}Sobre mim{">"}

@@ -1,6 +1,7 @@
 "use client";
-import { AlignRight } from "lucide-react";
 import { useState } from "react";
+import { useTheme } from 'next-themes';
+import { AlignRight, Moon, Sun } from "lucide-react";
 
 export function Header() {
   const menuItems = [
@@ -13,6 +14,24 @@ export function Header() {
 
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
+  const { setTheme,systemTheme,theme } = useTheme();
+
+  const ThemeToggle = ()=>{
+    const currentTheme = theme === "system" ? systemTheme : theme;
+
+
+    return(
+      <button 
+        className="bg-indigo-200 p-2 rounded-full dark:bg-teal-800 " 
+        onClick={
+          ()=> currentTheme === "dark" ? setTheme("light") : setTheme("dark")
+        }
+      >
+        {currentTheme === "dark" ? <Sun/> : <Moon />}
+      </button>
+    )
+  }
+
   const toggleMenu = () => {
     setMenuIsOpen(!menuIsOpen);
   };
@@ -24,10 +43,10 @@ export function Header() {
   return (
     <>
       <header
-        className="fixed left-0 top-0 right-0 bg-slate-50 flex justify-between items-center py-2 px-6 z-50 shadow-lg xl:justify-around dark:bg-darkBg dark:text-white"
+        className="fixed left-0 top-0 right-0 bg-slate-50 flex justify-between items-center py-3 px-6 z-50 shadow-lg xl:justify-around dark:bg-darkBg dark:text-white"
         onMouseLeave={closeMenu}
       >
-        <h1 className="font-black -tracking-widest text-3xl text-gray-700 sm:text-4xl dark:text-white">
+        <a href="#" className="font-black -tracking-widest text-3xl text-gray-700 sm:text-4xl dark:text-white">
           <span className="text-indigo-600 text-2xl dark:text-teal-600">
             {"<"}
           </span>
@@ -35,9 +54,9 @@ export function Header() {
           <span className="text-indigo-500 text-2xl dark:text-teal-500">
             {"/>"}
           </span>
-        </h1>
+        </a>
 
-        <nav>
+        <nav className="flex items-center">
           <button className="lg:hidden" onClick={toggleMenu}>
             <AlignRight className="h-8 w-8" />
           </button>
@@ -67,6 +86,7 @@ export function Header() {
               );
             })}
           </ul>
+          {ThemeToggle()}
         </nav>
       </header>
       <div
