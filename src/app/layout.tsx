@@ -20,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={jetBrains.className}>
+        <ThemeProvider attribute="class">
           {children}
+        </ThemeProvider>
       </body>
     </html>
   );

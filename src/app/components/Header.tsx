@@ -14,9 +14,9 @@ export function Header() {
 
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
-  // const { setTheme,systemTheme,theme } = useTheme();
+  const { setTheme,systemTheme,theme } = useTheme();
 
-  // const currentTheme = theme === "system" ? systemTheme : theme;
+  const currentTheme = theme === "system" ? systemTheme : theme;
       
 
   const toggleMenu = () => {
@@ -73,15 +73,15 @@ export function Header() {
               );
             })}
           </ul>
-
-          {/* <button 
+          
+          <button 
             className="bg-indigo-200 ml-3 lg:ml-0 p-2 rounded-full dark:bg-teal-800 " 
             onClick={
               ()=> currentTheme === "dark" ? setTheme("light") : setTheme("dark")
             }
           >
             {currentTheme === "dark" ? <Sun/> : <Moon />}
-          </button> */}
+          </button>
 
         </nav>
       </header>
