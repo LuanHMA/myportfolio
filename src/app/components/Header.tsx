@@ -16,21 +16,8 @@ export function Header() {
 
   const { setTheme,systemTheme,theme } = useTheme();
 
-  const ThemeToggle = ()=>{
-    
-    const currentTheme = theme === "system" ? systemTheme : theme;
-
-    return(
-      <button 
-        className="bg-indigo-200 ml-3 lg:ml-0 p-2 rounded-full dark:bg-teal-800 " 
-        onClick={
-          ()=> currentTheme === "dark" ? setTheme("light") : setTheme("dark")
-        }
-      >
-        {currentTheme === "dark" ? <Sun/> : <Moon />}
-      </button>
-    )
-  }
+  const currentTheme = theme === "system" ? systemTheme : theme;
+      
 
   const toggleMenu = () => {
     setMenuIsOpen(!menuIsOpen);
@@ -86,7 +73,16 @@ export function Header() {
               );
             })}
           </ul>
-          {ThemeToggle()}
+          
+          <button 
+            className="bg-indigo-200 ml-3 lg:ml-0 p-2 rounded-full dark:bg-teal-800 " 
+            onClick={
+              ()=> currentTheme === "dark" ? setTheme("light") : setTheme("dark")
+            }
+          >
+            {currentTheme === "dark" ? <Sun/> : <Moon />}
+          </button>
+
         </nav>
       </header>
       <div
