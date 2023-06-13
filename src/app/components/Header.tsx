@@ -17,8 +17,8 @@ export function Header() {
   const { setTheme,systemTheme,theme } = useTheme();
 
   const ThemeToggle = ()=>{
+    
     const currentTheme = theme === "system" ? systemTheme : theme;
-
 
     return(
       <button 
