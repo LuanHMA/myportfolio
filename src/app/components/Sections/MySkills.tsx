@@ -1,104 +1,58 @@
 import { Section } from "../Section";
+import iconCSS from "@/app/assets/icon-css.svg";
+import iconHTML from "@/app/assets/icon-html.svg";
+import iconJS from "@/app/assets/icon-js.svg";
+import iconTS from "@/app/assets/icon-ts.svg";
+import iconReact from "@/app/assets/icon-react.svg";
+import iconNode from "@/app/assets/icon-node.svg";
+import iconNext from "@/app/assets/icon-nextjs.svg";
+import Image from "next/image";
 
 const skills = [
-  {techName: "HTML/CSS", level: 5},
-  {techName: "Javascript", level: 5},
-  {techName: "Typescript", level: 4},
-  {techName: "React JS", level: 4},
-  {techName: "Next JS", level: 3},
-  {techName: "Node", level: 2},
-]
+  { techName: "HTML", level: 100, img: iconHTML },
+  { techName: "CSS", level: 100, img: iconCSS },
+  { techName: "Javascript", level: 100, img: iconJS },
+  { techName: "Typescript", level: 60, img: iconTS },
+  { techName: "React JS", level: 80, img: iconReact },
+  { techName: "Next JS", level: 70, img: iconNext },
+  { techName: "Node", level: 40, img: iconNode },
+];
 
 export function MySkills() {
-
   return (
     <Section id="mySkills">
       <div className="flex flex-col gap-y-6">
-        <h1 className="text-xl font-extrabold tracking-wider sm:text-2xl lg:text-3xl dark:text-white">
+        <h1 className="text-xl font-extrabold tracking-wider sm:text-lg  dark:text-white">
           <span className="text-indigo-400 font-medium mr-2 dark:text-teal-400">
             02.
           </span>
           {"<"}Minhas Habilidades{">"}
         </h1>
 
-        <div className="shadow-2xl rounded-xl bg-slate-50 p-6 dark:bg-[#253238]">
-          {skills.map(({level,techName})=>{
-             const veryLow = level >= 1;
-             const low = level >= 2;
-             const medium = level >= 3;
-             const high = level >= 4;
-             const veryHigh = level === 5;
-         
-             return (
-               <div className="flex items-center gap-x-6">
-                 <h1 className="text-gray-800 dark:text-white">{techName}</h1>
-                 <div className="flex items-center gap-x-2 my-4">
-                   <span
-                     className={`
-                       w-12 h-7 rounded-lg ${
-                         veryLow
-                          ? "bg-indigo-100 text-indigo-100 dark:bg-teal-100 dark:text-teal-100"
-                          : "bg-gray-200 text-gray-200"
-                       } sm:w-16 sm:h-9
-                   `}
-                   >
-                     .
-                   </span>
-         
-                   <div
-                     className={`
-                      w-12 h-7 rounded-lg ${
-                        low
-                          ? "bg-indigo-200 text-indigo-200 dark:bg-teal-200 dark:text-teal-200"
-                          : "bg-gray-200 text-gray-200"
-                      } sm:w-16 sm:h-9
-                    `}
-                   >
-                     .
-                   </div>
-         
-                   <div
-                     className={`
-                                 w-12 h-7 rounded-lg ${
-                                   medium
-                                     ? "bg-indigo-300 text-indigo-300 dark:bg-teal-300 dark:text-teal-300"
-                                     : "bg-gray-200 text-gray-200"
-                                 } sm:w-16 sm:h-9
-                             `}
-                   >
-                     .
-                   </div>
-         
-                   <div
-                     className={`
-                                 w-12 h-7 rounded-lg ${
-                                   high
-                                     ? "bg-indigo-400 text-indigo-400 dark:bg-teal-400 dark:text-teal-400"
-                                     : "bg-gray-200 text-gray-200"
-                                 } sm:w-16 sm:h-9
-                             `}
-                   >
-                     .
-                   </div>
-         
-                   <div
-                     className={`
-                                 w-12 h-7 rounded-lg ${
-                                   veryHigh
-                                     ? "bg-indigo-500 text-indigo-500 dark:bg-teal-500 dark:text-teal-500"
-                                     : "bg-gray-200 text-gray-200"
-                                 } sm:w-16 sm:h-9
-                             `}
-                   >
-                     .
-                   </div>
-                 </div>
-               </div>
-             );
+        <div className="shadow-2xl rounded-xl bg-slate-50 py-14 px-6 dark:bg-[#253238] grid grid-cols-1 sm:grid-cols-2 gap-6 space-y-4">
+          {skills.map(({ level, techName, img }) => {
+            return (
+              <div className="w-full relative ">
+                <span className="inline-flex items-center gap-x-2">
+                  <Image src={img} alt={techName} width={25} />
+                  {techName}
+                </span>
+                <div
+                  className={`h-2 rounded-full z-20 absolute -bottom-2
+                    ${level >= 0 && level <= 40 && "bg-indigo-300"}
+                    ${level > 40 && level <= 60 && "bg-indigo-400"}
+                    ${level > 60 && "bg-indigo-500"}
+                  `}
+                  style={{ width: `${level}%` }}
+                />
+                <div className="w-full h-2 bg-indigo-100 rounded-full absolute -bottom-2 z-10" />
+                <span className="absolute right-0 bottom-0">{level}%</span>
+              </div>
+            );
           })}
         </div>
 
-        <span className="text-lg font-extrabold tracking-wider text-gray-400 text-right sm:text-xl lg:text-2xl ">
+        <span className="text-lg font-extrabold tracking-wider text-gray-400 text-right sm:text-xl lg:text-lg ">
           {"</"}Minhas Habilidades{">"}
         </span>
       </div>

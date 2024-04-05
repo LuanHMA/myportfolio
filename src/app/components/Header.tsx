@@ -13,7 +13,6 @@ export function Header() {
 
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
-
   const toggleMenu = () => {
     setMenuIsOpen(!menuIsOpen);
   };
@@ -28,12 +27,15 @@ export function Header() {
         className="fixed left-0 top-0 right-0 bg-slate-50 flex justify-between items-center py-3 px-6 z-50 shadow-lg xl:justify-around dark:bg-darkBg dark:text-white"
         onMouseLeave={closeMenu}
       >
-        <a href="#" className="font-black -tracking-widest text-3xl text-gray-700 sm:text-4xl dark:text-white">
-          <span className="text-indigo-600 text-2xl dark:text-teal-600">
+        <a
+          href="#"
+          className="font-black -tracking-widest text-3xl text-gray-700 sm:text-4xl dark:text-white"
+        >
+          <span className="text-indigo-600 text-lg dark:text-teal-600">
             {"<"}
           </span>
           Luan
-          <span className="text-indigo-500 text-2xl dark:text-teal-500">
+          <span className="text-indigo-500 text-lg dark:text-teal-500">
             {"/>"}
           </span>
         </a>
@@ -55,9 +57,9 @@ export function Header() {
                 <li key={index} className="w-full relative group">
                   <a
                     href={item.href}
-                    className="flex items-center w-full py-4 text-right font-medium text-md tracking-wide dark:text-white"
+                    className="flex items-center w-full py-4 text-right font-medium text-sm tracking-wide dark:text-white sm:text-base"
                   >
-                    <span className="text-indigo-500 dark:text-teal-400">
+                    <span className="text-indigo-500 dark:text-teal-400 text-sm sm:text-base">
                       0{index + 1}.
                     </span>
                     {item.title}
