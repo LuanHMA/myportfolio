@@ -1,5 +1,8 @@
 "use client";
 import { ExternalLink, Folder, Github } from "lucide-react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 import { Section } from "../Section";
 
 const projectsData = [
@@ -57,6 +60,33 @@ const projectsData = [
 ];
 
 export function MyProjects() {
+  const carouselSettings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <Section id="myProjects">
       <div className="flex flex-col space-y-6">
@@ -72,61 +102,63 @@ export function MyProjects() {
           fique a vontade para interagir com alguns dos meus projetos {"=)"}
         </p>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projectsData.map(
-            ({
-              description,
-              developedIn,
-              name,
-              projectLink,
-              repoLink,
-              techs,
-            }) => {
-              return (
-                <div className="sm:max-w-md sm:min-h-[280px] bg-white shadow-md rounded-xl p-6 space-y-4 transition-all hover:shadow-2xl hover:scale-105 dark:bg-[#253238]">
-                  <div className="flex justify-between items-center">
-                    <Folder className="text-indigo-500 dark:text-teal-500" />
+        <div className="w-full p-10">
+          <Slider {...carouselSettings} className="w-full p-10">
+            {projectsData.map(
+              ({
+                description,
+                developedIn,
+                name,
+                projectLink,
+                repoLink,
+                techs,
+              }) => {
+                return (
+                  <div className="sm:max-w-md sm:min-h-[280px] bg-white shadow-md rounded-xl p-6 space-y-4 transition-all hover:shadow-2xl hover:scale-105 dark:bg-[#253238]">
+                    <div className="flex justify-between items-center">
+                      <Folder className="text-indigo-500 dark:text-teal-500" />
 
-                    <div className="flex items-center gap-x-2">
-                      <a
-                        href={repoLink}
-                        target={"_blank"}
-                        title="Acessar repositório"
-                      >
-                        <Github className="text-gray-800 hover:text-indigo-400 dark:text-gray-400 dark:hover:text-teal-400" />
-                      </a>
-                      <a href={projectLink} title="Ver demostração">
-                        <ExternalLink className="text-gray-800 hover:text-indigo-400 dark:text-gray-400 dark:hover:text-teal-400" />
-                      </a>
+                      <div className="flex items-center gap-x-2">
+                        <a
+                          href={repoLink}
+                          target={"_blank"}
+                          title="Acessar repositório"
+                        >
+                          <Github className="text-gray-800 hover:text-indigo-400 dark:text-gray-400 dark:hover:text-teal-400" />
+                        </a>
+                        <a href={projectLink} title="Ver demostração">
+                          <ExternalLink className="text-gray-800 hover:text-indigo-400 dark:text-gray-400 dark:hover:text-teal-400" />
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="space-y-4">
+                      <h1 className="text-base font-semibold dark:text-white">
+                        {name}
+                      </h1>
+                      <p className="text-sm font-light dark:text-white">
+                        {description}
+                      </p>
+
+                      <p className="text-xs font-light text-gray-400 dark:text-white">
+                        Desenvolvido em: {developedIn}
+                      </p>
+
+                      <div className="flex items-center flex-wrap gap-2 text-gray-800 text-xs dark:text-white">
+                        {techs.map((tech) => {
+                          return (
+                            <span className="text-xs bg-gray-200 p-2 rounded-xl dark:bg-[#384348]">
+                              {tech}
+                            </span>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
-
-                  <div className="space-y-6">
-                    <h1 className="text-md font-semibold dark:text-white">
-                      {name}
-                    </h1>
-                    <p className="text-sm font-light dark:text-white">
-                      {description}
-                    </p>
-
-                    <p className="text-xs font-light text-gray-400 dark:text-white">
-                      Desenvolvido em: {developedIn}
-                    </p>
-
-                    <div className="flex items-center flex-wrap gap-2 text-gray-800 text-xs dark:text-white">
-                      {techs.map((tech) => {
-                        return (
-                          <span className="text-sm bg-gray-200 p-2 rounded-xl dark:bg-[#384348]">
-                            {tech}
-                          </span>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              );
-            }
-          )}
+                );
+              }
+            )}
+          </Slider>
         </div>
 
         <span className="text-lg font-extrabold tracking-wider text-gray-400 text-right">

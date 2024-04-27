@@ -10,17 +10,18 @@ import { ContactMe } from "./components/Sections/ContactMe";
 
 export default function Home() {
   return (
-      <div className="bg-neutral-50 pt-20 min-h-screen dark:bg-darkBg">
-        <Header />
+    <div className="bg-neutral-50 pt-20 min-h-screen dark:bg-darkBg">
+      <Header />
+      <p>Testando</p>
 
-        <main className="text-sm text-gray-900 sm:text-lg">
-          <Introduction />
-          <AboutMe />
-          <MySkills />
-          <MyProjects />
-          <MyWorks />
-          <ContactMe />
-        </main>
-      </div>
+      <main className="text-sm text-gray-900 sm:text-lg">
+        <Introduction />
+        <AboutMe />
+        <MySkills />
+        <MyProjects />
+        <MyWorks />
+        <ContactMe />
+      </main>
+    </div>
   );
 }
